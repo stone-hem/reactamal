@@ -13,7 +13,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 function App() {
   return (
     <div className='root'>
-
+<div className='.navbar-expand{-sm|-md|-lg|-xl}' style={{ padding:"30px"}}>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -32,6 +32,7 @@ function App() {
      <Activeprojects/>
      <Myshares/> */}
       </BrowserRouter>
+      </div>
     </div>
 
 

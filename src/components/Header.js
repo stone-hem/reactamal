@@ -15,14 +15,15 @@ const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Link to="/login" >Login</Link>
-            <Link to="/register" >Register</Link>
-            <Link to="/home" >Home</Link>
-            <Link to="/activeprojects" >Activeprojects</Link>
-            <Link to="/newprojetcs" >Newprojects</Link>
-            <Link to="/myshares" >Myshares</Link>
-            <Link to="/login" >Logout</Link>
-
+            <div  style={{ padding:"20px",wordSpacing: "1 rem" }}>
+            <Link to="/login" style={{ padding:"10px",wordSpacing: "0.5 rem" }} >Login</Link>
+            <Link to="/register" style={{ padding:"30px",wordSpacing: "1 rem" }}>Register</Link>
+            <Link to="/home" style={{ padding:"30px",wordSpacing: "1 rem" }}>Home</Link>
+            <Link to="/activeprojects" style={{ padding:"30px",wordSpacing: "1 rem" }}>Activeprojects</Link>
+            <Link to="/newprojetcs" style={{ padding:"30px",wordSpacing: "1 rem" }}>Newprojects</Link>
+            <Link to="/myshares" style={{ padding:"30px",wordSpacing: "1 rem" }}>Myshares</Link>
+            <Link to="/login" style={{ padding:"30px",wordSpacing: "1 rem" }} >Logout</Link>
+            </div>
           </Nav>
           <Form className="d-flex">
             <FormControl

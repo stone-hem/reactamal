@@ -1,12 +1,14 @@
 
 
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 
 
 function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const history=useNavigate()
   async function trysign() {
     let item = { email, password }
     console.log(item);
@@ -19,6 +21,8 @@ function Login() {
       }
     })
     result = await result.json()
+    localStorage.setItem('user',JSON.stringify(result));
+    history("/home")
     console.log("result", result)
   }
   return (

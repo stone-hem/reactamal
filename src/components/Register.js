@@ -7,10 +7,11 @@ import React, { useState } from 'react';
 function Register() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [phone, setPhone] = useState("")
+  const [phone_number, setPhone] = useState("")
   const [name, setName] = useState("")
+  const [password_confirmation, setPassword_confirmation] = useState("")
   async function trysign() {
-    let item = { email, phone, name, password }
+    let item = { email, phone_number, name, password,password_confirmation }
     console.log(item);
     let result = await fetch("http://127.0.0.1:8000/api/register", {
       method: "POST",
@@ -28,11 +29,13 @@ function Register() {
       <label>email</label><br />
       <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
       <label>Phone Number</label><br />
-      <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} /><br />
+      <input type="text" value={phone_number} onChange={(e) => setPhone(e.target.value)} /><br />
       <label>name</label><br />
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} /><br />
       <label>password</label><br />
       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+      <label>password confirmation</label><br />
+      <input type="password" value={password_confirmation} onChange={(e) => setPassword_confirmation(e.target.value)} /><br />
       <button onClick={trysign} className='btn btn-success'>Register</button>
     </div>
   );
