@@ -12,7 +12,6 @@ function Protected(props) {
 let Cmp=props.Cmp
 useEffect(()=>{
     if ( !localStorage.getItem('user')) {
-      console.log('got it');
       history('/login')
     }
   },[])

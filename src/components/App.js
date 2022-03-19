@@ -8,6 +8,7 @@ import Newprojects from "./Newprojects";
 import Activeprojects from "./Activeprojects";
 import Myshares from "./Myshares";
 import Protected from './Protected';
+import Profile from './Profile'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/newprojetcs' element={<Protected Cmp={Newprojects}/>} />
           <Route path='/activeprojects' element={<Protected Cmp={Activeprojects}/>} />
           <Route path='/myshares' element={<Protected Cmp={Myshares}/>} />
+          <Route path='/profile' element={<Protected Cmp={Profile}/>} />
         </Routes>
 
       </BrowserRouter>

@@ -34,15 +34,15 @@ function Register() {
     <div className='App' >
               <Header />
       <label>email</label><br />
-      <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
+      <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" /><br />
       <label>Phone Number</label><br />
-      <input type="text" value={phone_number} onChange={(e) => setPhone(e.target.value)} /><br />
+      <input type="text" value={phone_number} onChange={(e) => setPhone(e.target.value)} placeholder="phone number" /><br />
       <label>name</label><br />
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} /><br />
       <label>password</label><br />
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" /><br />
       <label>password confirmation</label><br />
-      <input type="password" value={password_confirmation} onChange={(e) => setPassword_confirmation(e.target.value)} /><br />
+      <input type="password" value={password_confirmation} onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="confirm password" /><br />
       <button onClick={trysign} className='btn btn-success'>Register</button>
     </div>
   );

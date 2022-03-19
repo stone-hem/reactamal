@@ -59,6 +59,7 @@ function Header() {
           <Nav>
             <NavDropdown title={userdata && userdata.user.name}>
               <NavDropdown.Item onClick={Logout}  >Logout</NavDropdown.Item>
+              <NavDropdown.Item > <Link to="/profile"  >Update Profile</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
           </>
