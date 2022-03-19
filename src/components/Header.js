@@ -1,6 +1,6 @@
 import React,{ useEffect } from "react";
-
-import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap'
+import './Custom.css'
+import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown,Dropdown,DropdownButton } from 'react-bootstrap'
 import { Link,useNavigate } from 'react-router-dom'
 
 function Header() {
@@ -25,12 +25,12 @@ function Header() {
             {
               localStorage.getItem('user')?
               <>
-              <div  style={{ padding:"20px",wordSpacing: "1 rem" }}></div>
+              <div style={{ padding:"20px",wordSpacing: "1 rem" }}>
                <Link to="/home" style={{ padding:"30px",wordSpacing: "1 rem" }}>Home</Link>
             <Link to="/activeprojects" style={{ padding:"30px",wordSpacing: "1 rem" }}>Activeprojects</Link>
             <Link to="/newprojetcs" style={{ padding:"30px",wordSpacing: "1 rem" }}>Newprojects</Link>
             <Link to="/myshares" style={{ padding:"30px",wordSpacing: "1 rem" }}>Myshares</Link>
-            
+            </div>
               </>
               :
               <>
@@ -55,13 +55,13 @@ function Header() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
+
           </Form>
-          <Nav>
-            <NavDropdown title={userdata && userdata.user.name}>
-              <NavDropdown.Item onClick={Logout}  >Logout</NavDropdown.Item>
-              <NavDropdown.Item > <Link to="/profile"  >Update Profile</Link></NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
+          <DropdownButton id="dropdown-basic-button" title={userdata && userdata.user.name} style={{position: 'relative' }}>
+  <Dropdown.Item onClick={Logout} >Logout</Dropdown.Item>
+  <Dropdown.Item><Link to="/profile"  >Update Profile</Link></Dropdown.Item>
+  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+</DropdownButton>
           </>
           :null
 }

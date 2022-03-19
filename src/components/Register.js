@@ -12,7 +12,7 @@ function Register() {
   async function trysign() {
     let item = { email, phone_number, name, password,password_confirmation }
     console.log(item);
-    let result = await fetch("http://127.0.0.1:8000/api/register", {
+    let result = await fetch("http://192.168.1.47:8000/api/register", {
       method: "POST",
       body: JSON.stringify(item),
       headers: {
@@ -38,12 +38,12 @@ function Register() {
       <label>Phone Number</label><br />
       <input type="text" value={phone_number} onChange={(e) => setPhone(e.target.value)} placeholder="phone number" /><br />
       <label>name</label><br />
-      <input type="text" value={name} onChange={(e) => setName(e.target.value)} /><br />
+      <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="name" /><br />
       <label>password</label><br />
       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" /><br />
       <label>password confirmation</label><br />
-      <input type="password" value={password_confirmation} onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="confirm password" /><br />
-      <button onClick={trysign} className='btn btn-success'>Register</button>
+      <input type="password" value={password_confirmation} onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="confirm password" /><br /><br />
+      <button onClick={trysign} className='btn btn-success'>Register</button><br />
     </div>
   );
 }

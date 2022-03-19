@@ -13,7 +13,7 @@ function Login() {
   async function trysign() {
     let item = { email, password }
     // console.log(item);
-    let result = await fetch("http://127.0.0.1:8000/api/login", {
+    let result = await fetch("http://192.168.1.47:8000/api/login", {
       method: "POST",
       body: JSON.stringify(item),
       headers: {

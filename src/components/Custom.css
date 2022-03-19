@@ -1,0 +1,14 @@
+/* @media screen and (max-width: 500px){
+        flexDirection:'Column',
+        height: 'auto',
+        marginTop: 50px,
+        width:100%,
+        borderTop: 1px solid rgba(255, 255, 255, 0.555),
+        textAlign: center,
+        marginRight: 0px,
+        padding: 20px 0,
+        display: block,
+} */
+.topright{
+    position: 'absolute',
+}

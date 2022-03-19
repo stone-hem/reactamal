@@ -17,6 +17,7 @@ const Home = () => {
   return (
     <>
     <Header />
+    <br/>
 <div className="card-deck">
   <div className="card">
     <img className="card-img-top" src="..." alt="Card image cap"/>
