@@ -1,9 +1,16 @@
-import React from "react";
+import React,{ useEffect } from "react";
 
-import { Navbar, Container, Nav, Form, FormControl, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap'
+import { Link,useNavigate } from 'react-router-dom'
 
-const Header = () => {
+function Header() {
+  let history=useNavigate()
+  function Logout(){
+    localStorage.clear()
+    history('/login')
+  }
+
+  let userdata=JSON.parse(localStorage.getItem('user'))
   return (
     <Navbar bg="light" expand="lg" className="navbar">
       <Container fluid>
@@ -15,16 +22,31 @@ const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <div  style={{ padding:"20px",wordSpacing: "1 rem" }}>
-            <Link to="/login" style={{ padding:"10px",wordSpacing: "0.5 rem" }} >Login</Link>
-            <Link to="/register" style={{ padding:"30px",wordSpacing: "1 rem" }}>Register</Link>
-            <Link to="/home" style={{ padding:"30px",wordSpacing: "1 rem" }}>Home</Link>
+            {
+              localStorage.getItem('user')?
+              <>
+              <div  style={{ padding:"20px",wordSpacing: "1 rem" }}></div>
+               <Link to="/home" style={{ padding:"30px",wordSpacing: "1 rem" }}>Home</Link>
             <Link to="/activeprojects" style={{ padding:"30px",wordSpacing: "1 rem" }}>Activeprojects</Link>
             <Link to="/newprojetcs" style={{ padding:"30px",wordSpacing: "1 rem" }}>Newprojects</Link>
             <Link to="/myshares" style={{ padding:"30px",wordSpacing: "1 rem" }}>Myshares</Link>
-            <Link to="/login" style={{ padding:"30px",wordSpacing: "1 rem" }} >Logout</Link>
+            
+              </>
+              :
+              <>
+                <div  style={{ padding:"20px",wordSpacing: "1 rem" }}>
+            <Link to="/login" style={{ padding:"10px",wordSpacing: "0.5 rem" }} >Login</Link>
+            <Link to="/register" style={{ padding:"30px",wordSpacing: "1 rem" }}>Register</Link>
+           
             </div>
+              </>
+ 
+            }
+          
           </Nav>
+          {
+              localStorage.getItem('user')?
+              <>
           <Form className="d-flex">
             <FormControl
               type="search"
@@ -34,10 +56,18 @@ const Header = () => {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
+          <Nav>
+            <NavDropdown title={userdata && userdata.user.name}>
+              <NavDropdown.Item onClick={Logout}  >Logout</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          </>
+          :null
+}
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-};
+}
 
 export default Header;

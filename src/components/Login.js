@@ -1,7 +1,8 @@
 
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {useNavigate} from 'react-router-dom'
+import Header from './Header';
 
 
 
@@ -25,8 +26,15 @@ function Login() {
     history("/home")
     console.log("result", result)
   }
+  useEffect(()=>{
+    if ( localStorage.getItem('user')) {
+      console.log('got it');
+      history('/home')
+    }
+  },[])
   return (
     <div className="App">
+              <Header />
       <label>email</label><br />
       <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
       <label>password</label><br />

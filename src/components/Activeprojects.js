@@ -1,9 +1,11 @@
 import React from "react"
+import Header from "./Header";
 
 
 const Activeprojects = () => {
   return (
     <div>
+      <Header/>
       <h1>Active projects</h1>
       <table className="table table-striped">
         <thead>

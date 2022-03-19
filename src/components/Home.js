@@ -1,5 +1,5 @@
 import React from "react"
-
+import Header from "./Header";
 // const Home=()=>{
 //     return(
 //         <div className="card" style="width: 18rem;">
@@ -15,6 +15,8 @@ import React from "react"
 // };
 const Home = () => {
   return (
+    <>
+    <Header />
 <div className="card-deck">
   <div className="card">
     <img className="card-img-top" src="..." alt="Card image cap"/>
@@ -47,6 +49,7 @@ const Home = () => {
     </div>
   </div>
 </div>
+</>
   );
 }
 

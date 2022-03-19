@@ -1,9 +1,11 @@
 import React from "react"
+import Header from "./Header";
 
 
 const Myshares=()=>{
   return (
       <div>
+        <Header/>
           <h1>My shares</h1>
     <table className="table table-striped">
   <thead>

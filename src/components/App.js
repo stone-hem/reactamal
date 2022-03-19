@@ -7,6 +7,7 @@ import Register from "./Register";
 import Newprojects from "./Newprojects";
 import Activeprojects from "./Activeprojects";
 import Myshares from "./Myshares";
+import Protected from './Protected';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -15,22 +16,15 @@ function App() {
     <div className='root'>
 <div className='.navbar-expand{-sm|-md|-lg|-xl}' style={{ padding:"30px"}}>
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/newprojetcs' element={<Newprojects />} />
-          <Route path='/activeprojects' element={<Activeprojects />} />
-          <Route path='/myshares' element={<Myshares />} />
+          <Route path='/home' element={<Protected Cmp={Home} />} />
+          <Route path='/newprojetcs' element={<Protected Cmp={Newprojects}/>} />
+          <Route path='/activeprojects' element={<Protected Cmp={Activeprojects}/>} />
+          <Route path='/myshares' element={<Protected Cmp={Myshares}/>} />
         </Routes>
-        {/* <Header/>
-      <Home/>
-      <Login/>
-      <Register/>
-      <Newprojects/>
-     <Activeprojects/>
-     <Myshares/> */}
+
       </BrowserRouter>
       </div>
     </div>

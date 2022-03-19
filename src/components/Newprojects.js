@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import Header from "./Header";
 
 const Newprojects = () => {
   return (
-    <div>
+
       <div>
+        <Header/>
         <h1>New projects</h1>
         <div className="card" style={{ width: "18rem" }}>
           <img src="#" className="card-img-top" alt="new image"></img>
@@ -36,7 +38,6 @@ const Newprojects = () => {
 
 
       </div>
-    </div>
   );
 }
 export default Newprojects

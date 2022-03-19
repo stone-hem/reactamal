@@ -1,8 +1,6 @@
-
-
-import React, { useState } from 'react';
-
-
+import React, { useState,useEffect } from 'react';
+import Header from './Header';
+import {useNavigate} from 'react-router-dom'
 
 function Register() {
   const [email, setEmail] = useState("")
@@ -10,6 +8,7 @@ function Register() {
   const [phone_number, setPhone] = useState("")
   const [name, setName] = useState("")
   const [password_confirmation, setPassword_confirmation] = useState("")
+  const history=useNavigate()
   async function trysign() {
     let item = { email, phone_number, name, password,password_confirmation }
     console.log(item);
@@ -23,9 +22,17 @@ function Register() {
     })
     result = await result.json()
     console.log("result", result)
+    history('/login')
   }
+  useEffect(()=>{
+    if ( localStorage.getItem('user')) {
+      console.log('got it');
+      history('/home')
+    }
+  },[])
   return (
     <div className='App' >
+              <Header />
       <label>email</label><br />
       <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
       <label>Phone Number</label><br />
